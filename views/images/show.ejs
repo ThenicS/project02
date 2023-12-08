@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <%- include('../partials/navigation') %>
+        <h1>Image Seargh App</h1>
+    <form action="/images/show" method="POST">
+        <div>
+            <label for="search_element">
+                Search:
+            </label>
+            <input type="text" id="search_element" name="search">
+            <input type="hidden" id="per_page" name="per_page" value="15">
+            <input type="hidden" id="page" name="page" value="1">
+        </div>
+        <button type="submit">
+            search
+        </button>
+        <div class="display_images">
+            <ol>
+                <% images.forEach((photo)=> { %>
+                    <li>
+                        <div>
+                            <h2>
+                                <%= photo.alt %>
+                            </h2>
+                            <a href="<%= photo.id %>">
+                                <img src="<%= photo.src.large %>" alt="<%= photo.alt %>">
+                            </a>
+                        </div>
+                        <div>
+                            <h3>
+                                Photographer: <%= photo.photographer %>
+                            </h3>
+                        </div>
+                        
+                    </li> <br>
+                    <% }) %>
+                </ol>
+            </div>
+        </form>
+        <form action="/images/show" method="POST">
+            <div>
+                <label for="show_more"></label>
+                <input type="hidden" id="per_page" name="per_page" value="<%= per_page %>">
+                <input type="hidden" id="search" name="search" value="<%= search %>">
+                <input type="hidden" id="page" name="page" value="<%= parseInt(page) + 1 %>">
+                <button type="submit">Next Page</button>
+            </div>
+        </form>
+    </body>
+    </html>

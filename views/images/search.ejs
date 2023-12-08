@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../partials/navigation') %>
+        <h1>Image Seargh App</h1>
+        <form action="/images/show" method="POST">
+            <div>
+                <label for="search_element">
+                    Search:
+                </label>
+                <input type="text" id="search_element" name="search">
+                <input type="hidden" id="per_page" name="per_page" value="15">
+                <input type="hidden" id="page" name="page" value="1">
+            </div>
+            <button type="submit">
+                search
+            </button>
+        </form>
+
+</body>
+</html>
