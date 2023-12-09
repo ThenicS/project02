@@ -8,6 +8,8 @@ const logger = require('morgan');
 const PORT = process.env.PORT || 3000;
 
 const imagesRouter = require('./routes/images');
+const errorControllers = require('./controllers/error');
+const { error } = require('console');
 
 const app = express();
 
@@ -27,6 +29,10 @@ app.use('/images/search', imagesRouter);
 app.use('/images/show', imagesRouter);
 
 app.use('images:id', imagesRouter);
+// >>>>>>>>>>>>>>>>>>
+
+// error page
+app.use(errorControllers.get404Page);
 // >>>>>>>>>>>>>>>>>>
 
 app.listen(PORT, () => {

@@ -44,6 +44,8 @@ const gallerySchema = new Schema(
 // Compile the schema into a model and export it
 module.exports = mongoose.model('Gallery', gallerySchema);
 
+// <<<<<<<<<<<<<<<<<< Examples >>>>>>>>>>>>>>>>>
+
 // "id": 19261071,
 // "width": 6825,
 // "height": 4552,

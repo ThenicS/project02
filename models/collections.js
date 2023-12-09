@@ -67,6 +67,8 @@ const col_imageSchema = new Schema(
 // Compile the schema into a model and export it
 module.exports = mongoose.model('Collections', collectionsSchema);
 
+// <<<<<<<<<<<<<<<<<< Examples >>>>>>>>>>>>>>>>>
+
 // images: [
 //         {
 //             id: 19269504,

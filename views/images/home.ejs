@@ -7,5 +7,28 @@
 </head>
 <body>
     <%- include('../partials/navigation') %>
+    <div class="display_images">
+        <ol>
+            <% images.forEach((photo)=> { %>
+            <li>
+                <div>
+                    <h2>
+                        <%= photo.alt %>
+                    </h2>
+                    <a href="/images/<%= photo.id %>">
+                        <img src="<%= photo.src.large %>" alt="<%= photo.alt %>">
+                    </a>
+                </div>
+                <div>
+                    <h3>
+                        Photographer: <%= photo.photographer %>
+                    </h3>
+                </div>
+            
+            </li> <br>
+            <% }) %>
+        </ol>
+    </div>
+
 </body>
 </html>
