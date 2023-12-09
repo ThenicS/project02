@@ -26,11 +26,12 @@ async function home(req, res) {
     );
     const data = await image_Curated.json();
     const images = data.photos;
-    console.log(images);
+    // console.log(images);
     res.render('images/home', { images: images });
 }
 
 function search(req, res) {
+    // Add Trending and New to image search page
     res.render('images/search');
 }
 
@@ -59,7 +60,7 @@ async function showimages(req, res) {
         page: page,
     });
 }
-
+// show image index page after clicked image in '/', '/images/search, '/images/show'
 async function imageindex(req, res) {
     const id = +req.params.id;
     const imagesAPI_id = await fetch(`https://api.pexels.com/v1/photos/${id}`, {
@@ -71,6 +72,6 @@ async function imageindex(req, res) {
     });
     const data = await imagesAPI_id.json();
     const imageId = data;
-    console.log(imageId);
+    // console.log(imageId);
     res.render('images/index', { imageId: imageId });
 }

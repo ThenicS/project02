@@ -2,29 +2,6 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const collectionsSchema = new Schema(
-    {
-        title: {
-            type: String,
-            require: true,
-            default: 'No Title',
-        },
-        id: {
-            type: Number,
-            require: true,
-        },
-        description: {
-            type: String,
-            require: true,
-            default: 'Write your description here',
-        },
-        images: [col_imageSchema],
-    },
-    {
-        timpstamps: true,
-    }
-);
-
 const col_imageSchema = new Schema(
     {
         id: {
@@ -63,9 +40,30 @@ const col_imageSchema = new Schema(
         timestamps: true,
     }
 );
-
+const collectionsSchema = new Schema(
+    {
+        title: {
+            type: String,
+            require: true,
+            default: 'No Title',
+        },
+        id: {
+            type: Number,
+            require: true,
+        },
+        description: {
+            type: String,
+            require: true,
+            default: 'Write your description here',
+        },
+        images: [col_imageSchema],
+    },
+    {
+        timpstamps: true,
+    }
+);
 // Compile the schema into a model and export it
-module.exports = mongoose.model('Collections', collectionsSchema);
+module.exports = mongoose.model('Collection', collectionsSchema);
 
 // <<<<<<<<<<<<<<<<<< Examples >>>>>>>>>>>>>>>>>
 
