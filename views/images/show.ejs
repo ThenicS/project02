@@ -4,11 +4,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/stylesheets/navigation.css">
+        <link rel="stylesheet" href="/stylesheets/gallery.css">
         <title>Document</title>
     </head>
     <body>
         <%- include('../partials/navigation') %>
-        <h1>Image Seargh App</h1>
+        <h2>Image Seargh App</h2>
     <form action="/images/show" method="POST">
         <div>
             <label for="search_element">
@@ -26,19 +27,10 @@
                 <% images.forEach((photo)=> { %>
                     <li>
                         <div>
-                            <h2>
-                                <%= photo.alt %>
-                            </h2>
                             <a href="<%= photo.id %>">
                                 <img src="<%= photo.src.large %>" alt="<%= photo.alt %>">
                             </a>
-                        </div>
-                        <div>
-                            <h3>
-                                Photographer: <%= photo.photographer %>
-                            </h3>
-                        </div>
-                        
+                        </div>                        
                     </li> <br>
                     <% }) %>
                 </ol>

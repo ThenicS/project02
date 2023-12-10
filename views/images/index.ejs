@@ -10,5 +10,23 @@
     <%- include('../partials/navigation') %>
     <h2><%= imageId.alt %></h2>
     <img src="<%= imageId.src.large2x %>" alt="<%= imageId.alt %>">
-</body>
+    <br>
+    <form action="/gallery" method="POST">
+        <div>
+            <label for="search_element">
+                Add to Gallery
+            </label>
+            <input type="hidden" id="id" name="id" value="<%= id %>">
+            <input type="hidden" id="photographer" name="photographer" value="<%= photographer %>">
+            <input type="hidden" id="pexelUrl" name="pexelUrl" value="<%= pexelUrl %>">
+            <input type="hidden" id="ima_Original" name="ima_Original" value="<%= ima_Original %>">
+            <input type="hidden" id="ima_Large2x" name="ima_Large2x" value="<%= ima_Large2x %>">
+            <input type="hidden" id="ima_Large" name="ima_Large" value="<%= ima_Large %>">
+            <input type="hidden" id="ima_Medium" name="ima_Medium" value="<%= ima_Medium %>">
+            <input type="hidden" id="alt" name="alt" value="<%= alt %>">
+        </div>
+        <button type="submit">
+            Add
+        </button>
+    </body>
 </html>

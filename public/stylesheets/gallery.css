@@ -1,0 +1,27 @@
+.display_images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+ol {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+li {
+    width: calc(25% - 10px);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    /* rounded corners */
+    border-radius: 25px;
+}

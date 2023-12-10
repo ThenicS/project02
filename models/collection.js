@@ -18,17 +18,29 @@ const col_imageSchema = new Schema(
             require: true,
             default: 'https://www.pexels.com/',
         },
-        ima_original: {
+        ima_Original: {
             type: String,
             require: true,
             default:
                 'https://images.pexels.com/photos/2882552/pexels-photo-2882552.jpeg',
         },
-        ima_large2x: {
+        ima_Large2x: {
             type: String,
             require: true,
             default:
                 'https://images.pexels.com/photos/2882552/pexels-photo-2882552.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+        },
+        ima_Large: {
+            type: String,
+            require: true,
+            default:
+                'https://images.pexels.com/photos/2882552/pexels-photo-2882552.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+        },
+        ima_Medium: {
+            type: String,
+            require: true,
+            default:
+                'https://images.pexels.com/photos/2882552/pexels-photo-2882552.jpeg?auto=compress&cs=tinysrgb&h=350',
         },
         alt: {
             type: String,
@@ -47,16 +59,27 @@ const collectionsSchema = new Schema(
             require: true,
             default: 'No Title',
         },
-        id: {
-            type: Number,
-            require: true,
-        },
+        // id: {
+        //     type: Number,
+        //     require: true,
+        // },
         description: {
             type: String,
             require: true,
             default: 'Write your description here',
         },
         images: [col_imageSchema],
+        count: {
+            type: Number,
+            min: 0,
+            max: 9999,
+            default: function () {
+                const images = [col_imageSchema];
+                let count = 0;
+                count = images.length + 1;
+                return count;
+            },
+        },
     },
     {
         timpstamps: true,

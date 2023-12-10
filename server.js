@@ -14,6 +14,8 @@ const imagesRouter = require('./routes/images');
 // >>>>>>>>>>>>>>>>>>>> WORKING ON gallerysRouter <<<<<<<<<<<<<<<<<<<<<<
 const gallerysRouter = require('./routes/gallerys');
 
+const collectionRouter = require('./routes/collections');
+
 const errorControllers = require('./controllers/error');
 const { error } = require('console');
 
@@ -30,12 +32,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // imagesRouter use
 app.use('/', imagesRouter);
+// >>>>>>>>>>>>>>>>>>
 
-app.use('/images/search', imagesRouter);
+// galleryRouter use
+app.use('/', gallerysRouter);
+// >>>>>>>>>>>>>>>>>>
 
-app.use('/images/show', imagesRouter);
-
-app.use('images:id', imagesRouter);
+// collectionRouter use
+app.use('/', collectionRouter);
 // >>>>>>>>>>>>>>>>>>
 
 // error page

@@ -27,7 +27,7 @@ async function home(req, res) {
     const data = await image_Curated.json();
     const images = data.photos;
     // console.log(images);
-    res.render('images/home', { images: images });
+    res.render('images/home', { images: images, title: 'Home' });
 }
 
 function search(req, res) {
@@ -72,6 +72,31 @@ async function imageindex(req, res) {
     });
     const data = await imagesAPI_id.json();
     const imageId = data;
+    const photographer = imageId.photographer;
+    const pexelUrl = imageId.photographer_url;
+    const ima_Original = imageId.src.original;
+    const ima_Large2x = imageId.src.large2x;
+    const ima_Large = imageId.src.large;
+    const ima_Medium = imageId.src.medium;
+    const alt = imageId.alt;
+    // console.log(id);
+    // console.log(photographer);
+    // console.log(pexelUrl);
+    // console.log(ima_Original);
+    // console.log(ima_Large2x);
+    // console.log(ima_Large);
+    // console.log(ima_Medium);
+    // console.log(alt);
     // console.log(imageId);
-    res.render('images/index', { imageId: imageId });
+    res.render('images/index', {
+        imageId: imageId,
+        id: id,
+        photographer: photographer,
+        pexelUrl: pexelUrl,
+        ima_Original: ima_Original,
+        ima_Large2x: ima_Large2x,
+        ima_Large: ima_Large,
+        ima_Medium: ima_Medium,
+        alt: alt,
+    });
 }
