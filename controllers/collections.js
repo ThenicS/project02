@@ -10,6 +10,8 @@ module.exports = {
     collectionsIndex,
 };
 
-function collectionsIndex(req, res) {
-    res.write('<h1>Hello world !</h1>');
+async function collectionsIndex(req, res) {
+    const collections = await Collection.find({});
+    res.render('collections/collection', { collections: collections });
+    // res.send(collections);
 }

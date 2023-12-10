@@ -68,18 +68,18 @@ const collectionsSchema = new Schema(
             require: true,
             default: 'Write your description here',
         },
-        images: [col_imageSchema],
-        count: {
-            type: Number,
-            min: 0,
-            max: 9999,
-            default: function () {
-                const images = [col_imageSchema];
-                let count = 0;
-                count = images.length + 1;
-                return count;
-            },
-        },
+        // images: [col_imageSchema],
+        // count: {
+        //     type: Number,
+        //     min: 0,
+        //     max: 9999,
+        //     default: function () {
+        //         const images = [col_imageSchema];
+        //         let count = 0;
+        //         count = images.length;
+        //         return count;
+        //     },
+        // },
     },
     {
         timpstamps: true,

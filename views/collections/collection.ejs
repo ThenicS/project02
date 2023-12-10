@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/stylesheets/navigation.css">
-    <link rel="stylesheet" href="/stylesheets/gallery.css">
 </head>
 <body>
     <%- include('../partials/navigation') %>
-    <h2>this is gallery page</h2>
-    <div class="display_images">
-        <ol>
-            <% gallerys.forEach((gallery)=> { %>
+    <div class="collections">
+        <% collections.forEach((collection) => { %>
+            <ul>
                 <li>
-                    <img src="<%= gallery.ima_Large %>" alt="<%= gallery.alt %>">
+                    <a href="/collections/<%= collection._id %>"><%= collection.title %></a>
                 </li>
-            <%}) %>
-        </ol>
+            </ul>
+        <% }) %>
     </div>
+    
+    
 </body>
 </html>
