@@ -14,7 +14,9 @@
         <ol>
             <% gallerys.forEach((gallery)=> { %>
                 <li>
-                    <img src="<%= gallery.ima_Large %>" alt="<%= gallery.alt %>">
+                    <a href="/gallery/<%= gallery._id.toString() %>">
+                        <img src="<%= gallery.ima_Large %>" alt="<%= gallery.alt %>">
+                    </a>
                 </li>
             <%}) %>
         </ol>

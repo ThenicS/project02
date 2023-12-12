@@ -47,6 +47,11 @@ const gallerySchema = new Schema(
             require: true,
             default: 'No Title',
         },
+        user: {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+            require: true,
+        },
     },
     {
         timestamps: true,

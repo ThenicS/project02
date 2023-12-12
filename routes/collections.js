@@ -3,6 +3,8 @@ const router = express.Router();
 
 const collectionsCtrl = require('../controllers/collections');
 
-router.get('/collections', collectionsCtrl.collectionsIndex);
+router.get('/collections', collectionsCtrl.collectionsSet);
+
+router.get('/collections/:id', collectionsCtrl.collectionShow);
 
 module.exports = router;

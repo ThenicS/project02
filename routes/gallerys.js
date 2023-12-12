@@ -7,4 +7,6 @@ router.get('/gallery', gallerysCtrl.showGallerys);
 
 router.post('/gallery', gallerysCtrl.saveGallerys);
 
+router.get('/gallery/:id', gallerysCtrl.indexGallerys);
+
 module.exports = router;

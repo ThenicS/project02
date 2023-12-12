@@ -10,11 +10,12 @@ module.exports = {
     showGallerys,
     addImgae,
     saveGallerys,
+    indexGallerys,
 };
 
 async function showGallerys(req, res) {
     const gallerys = await Gallery.find({});
-    console.log(gallerys);
+    // console.log(gallerys);
     res.render('gallerys/gallery', { gallerys: gallerys });
 }
 
@@ -36,10 +37,17 @@ async function saveGallerys(req, res) {
     // console.log(ima_Medium);
     // console.log(alt);
     const gallerys = await Gallery.create(req.body);
+    // const objId = gallerys.ObjectId.toString();
+    // console.log(objId);
     res.redirect('/gallery');
 }
 
-function showGallery(req, res) {
-    const id = 12;
+async function indexGallerys(req, res) {
+    const objId = req.params.id;
+    // console.log(objId);
+    const gallery = await Gallery.findOne({ _id: objId });
+    const image = gallery;
+    // console.log(image);
+    res.render('gallerys/galleryIndex', { image: image });
 }
 function addImgae(req, res) {}

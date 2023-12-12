@@ -12,7 +12,7 @@
         <% collections.forEach((collection) => { %>
             <ul>
                 <li>
-                    <a href="/collections/<%= collection._id %>"><%= collection.title %></a>
+                    <a href="/collections/<%= collection._id.toString() %>"><%= collection.title %></a>
                 </li>
             </ul>
         <% }) %>
