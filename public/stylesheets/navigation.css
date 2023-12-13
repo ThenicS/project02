@@ -31,3 +31,23 @@ nav a:hover {
     background-color: #ddd;
     color: #333;
 }
+
+.main_nav a.active {
+    /* Text color */
+    color: #ffffff;
+    /* Background color */
+    background-color: #3498db;
+    /* Rounded corners */
+    border-radius: 5px;
+    /* Padding for better appearance */
+    padding: 8px 12px;
+    /* Bold text */
+    font-weight: bold;
+    /* Remove underline */
+    text-decoration: none;
+}
+
+.main_nav a:hover {
+    /* Underline on hover for non-active links */
+    text-decoration: underline;
+}
