@@ -30,6 +30,12 @@ router.get(
     })
 );
 
+router.get('/logout', (req, res) => {
+    req.logout(() => {
+        res.redirect('/');
+    });
+});
+
 // router.post('/gallery', gallerysCtrl.saveGallerys);
 
 module.exports = router;
