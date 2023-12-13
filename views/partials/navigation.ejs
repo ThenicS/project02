@@ -1,6 +1,9 @@
 <div class="main_nav">
     <nav>
         <% if (user){ %>
+            <a href="https://www.pexels.com">
+                <img src="https://images.pexels.com/lib/api/pexels-white.png" />
+            </a>
             <a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a>
             <a class="<%= path === '/search' ? 'active' : '' %>" href="/images/search">Photos</a>
             <a href="/">Videos</a>
@@ -8,6 +11,9 @@
             <a class="<%= path === '/collections' ? 'active' : '' %>" href="/collections">Collections</a>
             <a class="logout" href="/logout">Logout</a>
         <% }else { %>
+            <a href="https://www.pexels.com">
+                <img src="https://images.pexels.com/lib/api/pexels-white.png" />
+            </a>
             <a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a>
             <a class="<%= path === '/search' ? 'active' : '' %>" href="/images/search">Photos</a>
             <a href="/">Videos</a>

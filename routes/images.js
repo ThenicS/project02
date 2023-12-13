@@ -3,7 +3,11 @@ const router = express.Router();
 const passport = require('passport');
 
 const imagesCtrl = require('../controllers/images');
-const gallerysCtrl = require('../controllers/gallerys');
+// const gallerysCtrl = require('../controllers/gallerys');
+
+// const ensureLoggedIn = require('../config/ensureLoggedin');
+
+// router.use(ensureLoggedIn);
 
 router.get('/', imagesCtrl.home);
 

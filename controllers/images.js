@@ -15,7 +15,7 @@ async function home(req, res) {
     //     This endpoint enables you to receive real-time photos curated by the Pexels team.
     // We add at least one new photo per hour to our curated list so that you always get a changing selection of trending photos.
     const image_Curated = await fetch(
-        `https://api.pexels.com/v1/curated?per_page=30`,
+        `https://api.pexels.com/v1/curated?per_page=80`,
         {
             method: 'GET',
             headers: {

@@ -16,7 +16,7 @@ const MongoDBStore = require('connect-mongodb-session')(session);
 const PORT = process.env.PORT || 3000;
 
 const imagesRouter = require('./routes/images');
-// >>>>>>>>>>>>>>>>>>>> WORKING ON gallerysRouter <<<<<<<<<<<<<<<<<<<<<<
+
 const gallerysRouter = require('./routes/gallerys');
 
 const collectionRouter = require('./routes/collections');
@@ -51,29 +51,19 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+//
 app.use((req, res, next) => {
     res.locals.user = req.user;
     next();
 });
 
-// app.use('/test1', (req, res) => {
-//     console.log(req.session);
-//     req.session.user = {
-//         name: 'tonto',
-//         id: 'abc123',
-//     };
-//     // res.cookie('user', 'tonto');
-//     res.send("<a href='/test2'>Test 2</a>");
-// });
-
-// app.use('/test2', (req, res) => {
-//     console.log(req.cookies);
-//     console.log(req.session);
-//     res.send(`<h1>Hello ${req.session.user.name}</h1>`);
-// });
-
 // imagesRouter use
 app.use('/', imagesRouter);
+// >>>>>>>>>>>>>>>>>>
+
+//
+const ensureLoggedIn = require('./config/ensureLoggedin');
+app.use(ensureLoggedIn);
 // >>>>>>>>>>>>>>>>>>
 
 // galleryRouter use
