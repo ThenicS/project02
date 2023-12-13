@@ -1,23 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/stylesheets/navigation.css">
+<%- include('../partials/header') %>
 </head>
 <body>
-    <%- include('../partials/navigation') %>
-    <div class="collections">
-        <% collections.forEach((collection) => { %>
-            <ul>
-                <li>
-                    <a href="/collections/<%= collection._id.toString() %>"><%= collection.title %></a>
-                </li>
-            </ul>
-        <% }) %>
-    </div>
-    
+    <main>
+        <%- include('../partials/navigation') %>
+        <h2>Collections</h2>
+        <!-- <a href="/collections/new">Create</a> -->
+        <div class="collections">
+            <% collections.forEach((collection) => { %>
+                <ul>
+                    <li>
+                        <a href="/collections/<%= collection._id.toString() %>"><%= collection.title %></a>
+                    </li>
+                </ul>
+            <% }) %>
+        </div>
+        <br>
+        <div class="create_collection">
+            <form action="/collections" method="POST">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title"><br>
+                <label for="description">Description</label><br>
+                <textarea name="description" id="description" cols="20" rows="10"></textarea><br>
+                <button class="submit_btn" type="submit">Create</button>
+            </form>
+        </div>
+    </main>
     
 </body>
 </html>

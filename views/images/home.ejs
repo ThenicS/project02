@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/navigation.css">
-    <link rel="stylesheet" href="/stylesheets/gallery.css">
-    <title>Document</title>
+<%- include('../partials/header') %>
 </head>
 <body>
     <%- include('../partials/navigation') %>
@@ -14,18 +7,18 @@
             <% images.forEach((photo)=> { %>
             <li>
                 <div>
-                    <h2>
-                        <%= photo.alt %>
-                    </h2>
+                    <!-- <h2>
+                        photo.alt
+                    </h2> -->
                     <a href="/images/<%= photo.id %>">
-                        <img src="<%= photo.src.large %>" alt="<%= photo.alt %>">
+                        <img src="<%= photo.src.original %>" alt="<%= photo.alt %>">
                     </a>
                 </div>
-                <div>
+                <!-- <div>
                     <h3>
-                        Photographer: <%= photo.photographer %>
+                        Photographer:
                     </h3>
-                </div>
+                </div> -->
             
             </li> <br>
             <% }) %>

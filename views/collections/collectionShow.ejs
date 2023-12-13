@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<%- include('../partials/header') %>
 </head>
 <body>
     <div class="display_collections">
+        <br>
         <%- include('../partials/navigation') %>
         <ul>
             <% imageSet.forEach((image) => { %>
                 <li>
-                    <img src="<%= image.ima_Medium %>" alt="">
+                    <a href="/images/<%= image.id %>">
+                        <img src="<%= image.ima_Medium %>" alt="<%= image.alt %>">
+                    </a>
                 </li>
             <% }) %>
         </ul>

@@ -16,7 +16,11 @@ module.exports = {
 async function showGallerys(req, res) {
     const gallerys = await Gallery.find({});
     // console.log(gallerys);
-    res.render('gallerys/gallery', { gallerys: gallerys });
+    res.render('gallerys/gallery', {
+        gallerys: gallerys,
+        pageTitle: 'Gallery',
+        path: '/gallery',
+    });
 }
 
 async function saveGallerys(req, res) {
@@ -28,14 +32,6 @@ async function saveGallerys(req, res) {
     const ima_Large = req.body.ima_Large;
     const ima_Medium = req.body.ima_Medium;
     const alt = req.body.alt;
-    // console.log(id);
-    // console.log(photographer);
-    // console.log(pexelUrl);
-    // console.log(ima_Original);
-    // console.log(ima_Large2x);
-    // console.log(ima_Large);
-    // console.log(ima_Medium);
-    // console.log(alt);
     const gallerys = await Gallery.create(req.body);
     // const objId = gallerys.ObjectId.toString();
     // console.log(objId);
@@ -46,8 +42,15 @@ async function indexGallerys(req, res) {
     const objId = req.params.id;
     // console.log(objId);
     const gallery = await Gallery.findOne({ _id: objId });
+    const collections = await Collection.find({});
+    // console.log(collections);
     const image = gallery;
     // console.log(image);
-    res.render('gallerys/galleryIndex', { image: image });
+    res.render('gallerys/galleryIndex', {
+        image: image,
+        collections: collections,
+        pageTitle: 'Gallery',
+        path: '/gallery',
+    });
 }
 function addImgae(req, res) {}

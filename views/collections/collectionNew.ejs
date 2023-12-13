@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/navigation.css">
+</head>
+<body>
+    <%- include('../partials/navigation') %>
+    <h2>Create Collection</h2>
+    <main>
+        <div class="create_collection">
+            <form action="/collections" method="POST">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title"><br>
+                <label for="description">Description</label><br>
+                <textarea name="description" id="description" cols="20" rows="10"></textarea><br>
+                <button type="submit">Create</button>
+            </form>
+        </div>
+    </main>
+    
+</body>
+</html>

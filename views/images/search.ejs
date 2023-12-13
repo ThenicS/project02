@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/navigation.css">
-    <title>Document</title>
+<%- include('../partials/header') %>
 </head>
 <body>
     <%- include('../partials/navigation') %>
@@ -14,7 +8,7 @@
                 <label for="search_element">
                     Search:
                 </label>
-                <input type="text" id="search_element" name="search">
+                <input type="text" id="search_element" name="search" required>
                 <input type="hidden" id="per_page" name="per_page" value="15">
                 <input type="hidden" id="page" name="page" value="1">
             </div>

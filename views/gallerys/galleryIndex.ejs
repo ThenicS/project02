@@ -1,12 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<%- include('../partials/header') %>
+    <link rel="stylesheet" href="/stylesheets/imageIndex.css">
 </head>
 <body>
-    <img src="<%= image.ima_Original %>" alt="<%= image.alt %>">
-    <h1><%= image.photographer %></h1>
-</body>
-</html>
+    <main>
+        <%- include('../partials/navigation') %>
+        <div class="image_index">
+            <ol>
+                <img src="<%= image.ima_Original %>" alt="<%= image.alt %>">
+            </ol>
+        </div>
+        <div class="collection_pick">
+            <form action="/collections" method="POST">
+                <div>
+                    <label for="search_element">
+                        Add to Collection
+                    </label> <br>
+                    <% collections.forEach((collection) => { %>
+                        <input type="radio" id="<%= collection.title %>" name="_id" value="<% collection._id %>">
+                        <label for="collection"><%= collection.title %></label>
+                        <% }) %>
+                    </div>
+                    <button type="submit">
+                        Add
+                    </button>
+                </div>
+        </main>
+    </body>
+    </html>

@@ -5,7 +5,7 @@ const Collection = require('./models/collection');
 const Gallery = require('./models/gallery');
 
 // main();
-addCollection();
+// addCollection();
 // showprint();
 // deleteCollection();
 // createCollection();

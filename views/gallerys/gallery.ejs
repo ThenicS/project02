@@ -1,25 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/stylesheets/navigation.css">
-    <link rel="stylesheet" href="/stylesheets/gallery.css">
+<%- include('../partials/header') %>
 </head>
 <body>
     <%- include('../partials/navigation') %>
-    <h2>this is gallery page</h2>
     <div class="display_images">
         <ol>
             <% gallerys.forEach((gallery)=> { %>
                 <li>
                     <a href="/gallery/<%= gallery._id.toString() %>">
-                        <img src="<%= gallery.ima_Large %>" alt="<%= gallery.alt %>">
+                        <img src="<%= gallery.ima_Original %>" alt="<%= gallery.alt %>">
                     </a>
                 </li>
             <%}) %>
         </ol>
+    </div>
+    <div>
+        <form action=""></form>
     </div>
 </body>
 </html>

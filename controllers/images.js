@@ -27,12 +27,19 @@ async function home(req, res) {
     const data = await image_Curated.json();
     const images = data.photos;
     // console.log(images);
-    res.render('images/home', { images: images, title: 'Home' });
+    res.render('images/home', {
+        images: images,
+        pageTitle: 'Home',
+        path: '/',
+    });
 }
 
 function search(req, res) {
     // Add Trending and New to image search page
-    res.render('images/search');
+    res.render('images/search', {
+        pageTitle: 'Photos',
+        path: '/search',
+    });
 }
 
 async function showimages(req, res) {
@@ -58,6 +65,8 @@ async function showimages(req, res) {
         search: search,
         per_page: per_page,
         page: page,
+        pageTitle: 'Photos',
+        path: '/search',
     });
 }
 // show image index page after clicked image in '/', '/images/search, '/images/show'
@@ -73,7 +82,7 @@ async function imageindex(req, res) {
     const data = await imagesAPI_id.json();
     const imageId = data;
     const photographer = imageId.photographer;
-    const pexelUrl = imageId.photographer_url;
+    const pexelUrl = imageId.url;
     const ima_Original = imageId.src.original;
     const ima_Large2x = imageId.src.large2x;
     const ima_Large = imageId.src.large;
@@ -98,5 +107,7 @@ async function imageindex(req, res) {
         ima_Large: ima_Large,
         ima_Medium: ima_Medium,
         alt: alt,
+        pageTitle: 'Photos',
+        path: '/search',
     });
 }
