@@ -10,13 +10,13 @@ const userSchema = new Schema(
         },
         email: String,
         avatar: String,
-        gallery: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'Gallery',
-                require: true,
-            },
-        ],
+        // gallery: [
+        //     {
+        //         type: Schema.Types.ObjectId,
+        //         ref: 'Gallery',
+        //         require: true,
+        //     },
+        // ],
         // collections: [
         //     {
         //         type: Schema.Types.ObjectId,

@@ -1,10 +1,17 @@
 <div class="main_nav">
     <nav>
-    <a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a>
-    <a class="<%= path === '/search' ? 'active' : '' %>" href="/images/search">Photos</a>
-    <a href="/">Videos</a>
-    <a class="<%= path === '/gallery' ? 'active' : '' %>" href="/gallery">Gallery</a>
-    <a class="<%= path === '/collections' ? 'active' : '' %>" href="/collections">Collections</a>
-    <a href="/">Login</a>
+        <% if (user){ %>
+            <a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a>
+            <a class="<%= path === '/search' ? 'active' : '' %>" href="/images/search">Photos</a>
+            <a href="/">Videos</a>
+            <a class="<%= path === '/gallery' ? 'active' : '' %>" href="/gallery">Gallery</a>
+            <a class="<%= path === '/collections' ? 'active' : '' %>" href="/collections">Collections</a>
+            <a class="logout" href="/logout">Logout</a>
+        <% }else { %>
+            <a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a>
+            <a class="<%= path === '/search' ? 'active' : '' %>" href="/images/search">Photos</a>
+            <a href="/">Videos</a>
+            <a class="login" href="/auth/google">Login</a>
+            <% } %>
     </nav>
 </div>
