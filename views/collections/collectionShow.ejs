@@ -1,18 +1,25 @@
 <%- include('../partials/header') %>
 </head>
 <body>
-    <div class="display_collections">
-        <br>
+    <main>
         <%- include('../partials/navigation') %>
-        <ul>
-            <% imageSet.forEach((image) => { %>
-                <li>
-                    <a href="/images/<%= image.id %>">
-                        <img src="<%= image.ima_Medium %>" alt="<%= image.alt %>">
-                    </a>
-                </li>
-            <% }) %>
-        </ul>
-    </div>
+        <div class="display_collections">
+            <br>
+            <ul>
+                <% imageSet.forEach((image) => { %>
+                    <li>
+                        <a href="/images/<%= image.id %>">
+                            <img src="<%= image.ima_Medium %>" alt="<%= image.alt %>">
+                        </a>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+        <div class="gallery_remove">
+            <form action="/collections/<%= collection._id %>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete">
+            </form>
+        </div>
+    </main>
 </body>
 </html>

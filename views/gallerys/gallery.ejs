@@ -1,4 +1,5 @@
 <%- include('../partials/header') %>
+    <link rel="stylesheet" href="/stylesheets/gallery.css">
 </head>
 <body>
     <%- include('../partials/navigation') %>
@@ -7,7 +8,7 @@
             <% gallerys.forEach((gallery)=> { %>
                 <li>
                     <a href="/gallery/<%= gallery._id.toString() %>">
-                        <img src="<%= gallery.ima_Original %>" alt="<%= gallery.alt %>">
+                        <img class="image_render" src="<%= gallery.ima_Original %>" alt="<%= gallery.alt %>">
                     </a>
                 </li>
             <%}) %>

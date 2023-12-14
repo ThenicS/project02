@@ -1,4 +1,5 @@
 <%- include('../partials/header') %>
+    <link rel="stylesheet" href="/stylesheets/gallery.css">
 </head>
     <body>
         <%- include('../partials/navigation') %>
@@ -21,12 +22,12 @@
                     <li>
                         <div>
                             <a href="<%= photo.id %>">
-                                <img src="<%= photo.src.large %>" alt="<%= photo.alt %>">
+                                <img class="image_render" src="<%= photo.src.original %>" alt="<%= photo.alt %>">
                             </a>
                         </div>                        
                     </li> <br>
-                    <% }) %>
-                </ol>
+                <% }) %>
+            </ol>
             </div>
         </form>
         <form action="/images/show" method="POST">

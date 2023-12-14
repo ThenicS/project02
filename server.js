@@ -9,6 +9,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const logger = require('morgan');
+const methodOverride = require('method-override');
 const passport = require('passport');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
@@ -39,6 +40,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
 app.use(
     session({
@@ -54,6 +56,7 @@ app.use(passport.session());
 //
 app.use((req, res, next) => {
     res.locals.user = req.user;
+    // console.log(res.locals.user);
     next();
 });
 

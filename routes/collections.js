@@ -13,4 +13,8 @@ router.post('/collections', collectionsCtrl.collectionNew);
 
 router.get('/collections/:id', collectionsCtrl.collectionShow);
 
+router.post('/collections/:id', collectionsCtrl.collectionUpdate);
+
+router.delete('/collections/:id', collectionsCtrl.collectionRemove);
+
 module.exports = router;

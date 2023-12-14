@@ -8,14 +8,23 @@ const apiKey = `${process.env.API_KEY}`;
 
 module.exports = {
     showGallerys,
-    addImgae,
+    // addImgae,
     saveGallerys,
     indexGallerys,
+    galleryRemove,
 };
 
 async function showGallerys(req, res) {
-    const gallerys = await Gallery.find({});
+    const gallerys3 = await Gallery.find({});
     // console.log(gallerys);
+    // console.log(res.locals.user);
+    // console.log(res.locals.user._id);
+    // >>>>>>>>>>>>>>>>>>>>>
+    const gallerys2 = await Gallery.find({}).populate('user');
+    // console.log(res.locals.user.name);
+    // console.log(gallerys2);
+    // >>>>>>>>>>>>>>>>>>>>
+    const gallerys = await Gallery.find({ user: res.locals.user._id });
     res.render('gallerys/gallery', {
         gallerys: gallerys,
         pageTitle: 'Gallery',
@@ -32,7 +41,26 @@ async function saveGallerys(req, res) {
     const ima_Large = req.body.ima_Large;
     const ima_Medium = req.body.ima_Medium;
     const alt = req.body.alt;
-    const gallerys = await Gallery.create(req.body);
+    const gallery007 = req.body;
+    gallery007.user = res.locals.user;
+    console.log(gallery007);
+    // const gallerys = await Gallery.create(req.body);
+    const gallerys = await Gallery.create({
+        id: id,
+        photographer: photographer,
+        pexelUrl: pexelUrl,
+        ima_Original: ima_Original,
+        ima_Large2x: ima_Large2x,
+        ima_Large: ima_Large,
+        ima_Medium: ima_Medium,
+        alt: alt,
+        user: res.locals.user,
+    });
+    // console.log(res.locals.user);
+    // gallerys.user = res.locals.user;
+    // await gallerys.save();
+    // gallerys.user.push(res.locals.user);
+    // await gallerys.save();
     // const objId = gallerys.ObjectId.toString();
     // console.log(objId);
     res.redirect('/gallery');
@@ -41,8 +69,11 @@ async function saveGallerys(req, res) {
 async function indexGallerys(req, res) {
     const objId = req.params.id;
     // console.log(objId);
-    const gallery = await Gallery.findOne({ _id: objId });
-    const collections = await Collection.find({});
+    const gallery = await Gallery.findOne({
+        _id: objId,
+        user: res.locals.user._id,
+    });
+    const collections = await Collection.find({ user: res.locals.user._id });
     // console.log(collections);
     const image = gallery;
     // console.log(image);
@@ -53,4 +84,11 @@ async function indexGallerys(req, res) {
         path: '/gallery',
     });
 }
-function addImgae(req, res) {}
+async function galleryRemove(req, res) {
+    const objId = req.params.id;
+    const gallery = await Gallery.findOneAndDelete({
+        _id: objId,
+    });
+    console.log(gallery);
+    res.redirect('/gallery');
+}

@@ -1,3 +1,5 @@
+/* home, search, showimage */
+
 .display_images {
     display: flex;
     flex-direction: column;
@@ -19,9 +21,14 @@ li {
     box-sizing: border-box;
 }
 
-img {
+.image_render {
     width: 100%;
     height: auto;
     /* rounded corners */
     border-radius: 25px;
 }
+/* img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+} */
