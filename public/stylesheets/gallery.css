@@ -7,6 +7,10 @@
     margin-top: 20px;
 }
 
+/* div a {
+    margin: auto;
+} */
+
 ol {
     list-style: none;
     padding: 0;
@@ -16,9 +20,10 @@ ol {
 }
 
 li {
-    width: calc(25% - 10px);
+    width: calc(20% - 10px);
     margin-bottom: 20px;
     box-sizing: border-box;
+    margin: auto;
 }
 
 .image_render {
@@ -26,6 +31,7 @@ li {
     height: auto;
     /* rounded corners */
     border-radius: 25px;
+    margin: auto;
 }
 /* img {
     width: 100%;

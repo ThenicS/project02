@@ -1,23 +1,30 @@
 <div class="main_nav">
     <nav>
         <% if (user){ %>
-            <a href="https://www.pexels.com">
-                <img src="https://images.pexels.com/lib/api/pexels-white.png" />
-            </a>
-            <a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a>
-            <a class="<%= path === '/search' ? 'active' : '' %>" href="/images/search">Photos</a>
-            <a href="/">Videos</a>
-            <a class="<%= path === '/gallery' ? 'active' : '' %>" href="/gallery">Gallery</a>
-            <a class="<%= path === '/collections' ? 'active' : '' %>" href="/collections">Collections</a>
-            <a class="logout" href="/logout">Logout</a>
+            <div class="nav_left">
+                <a href="https://www.pexels.com">
+                    <img src="https://images.pexels.com/lib/api/pexels-white.png" />
+                </a>
+                <a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a>
+                <a class="<%= path === '/search' ? 'active' : '' %>" href="/images/search">Photos</a>
+                <a href="/">Videos</a>
+                <a class="<%= path === '/gallery' ? 'active' : '' %>" href="/gallery">Gallery</a>
+                <a class="<%= path === '/collections' ? 'active' : '' %>" href="/collections">Collections</a>
+            </div>
+            <div class="nav_right">
+                <a class="logout" href="/logout">Log out</a>
+            </div>
         <% }else { %>
-            <a href="https://www.pexels.com">
-                <img src="https://images.pexels.com/lib/api/pexels-white.png" />
-            </a>
-            <a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a>
-            <a class="<%= path === '/search' ? 'active' : '' %>" href="/images/search">Photos</a>
-            <a href="/">Videos</a>
-            <a class="login" href="/auth/google">Login</a>
+            <div class="nav_left">
+                <a href="https://www.pexels.com">
+                    <img src="https://images.pexels.com/lib/api/pexels-white.png" />
+                </a>
+                <a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a>
+                <a class="<%= path === '/search' ? 'active' : '' %>" href="/images/search">Photos</a>
+                <a href="/">Videos</a>
+            </div>
+                <a href="/auth/google" class="login">Log In</a>
+                <!-- <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a> -->
             <% } %>
     </nav>
 </div>

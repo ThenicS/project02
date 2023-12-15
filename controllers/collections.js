@@ -12,6 +12,7 @@ module.exports = {
     collectionNew,
     collectionUpdate,
     collectionRemove,
+    collectionEditTitle,
 };
 
 async function collectionsSet(req, res) {
@@ -78,5 +79,18 @@ async function collectionRemove(req, res) {
     const gallery = await Collection.findOneAndDelete({
         _id: objId,
     });
+    res.redirect('/collections');
+}
+
+async function collectionEditTitle(req, res) {
+    const objId = { _id: req.body.collection_id };
+    const title = { title: req.body.title };
+    // console.log(title);
+    // console.log(objId);
+    const collection = await Collection.findByIdAndUpdate(objId, title, {
+        returnOriginal: false,
+    });
+    await collection.save();
+    console.log(collection);
     res.redirect('/collections');
 }

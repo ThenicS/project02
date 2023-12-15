@@ -15,6 +15,8 @@ router.get('/collections/:id', collectionsCtrl.collectionShow);
 
 router.post('/collections/:id', collectionsCtrl.collectionUpdate);
 
+router.put('/collections', collectionsCtrl.collectionEditTitle);
+
 router.delete('/collections/:id', collectionsCtrl.collectionRemove);
 
 module.exports = router;
