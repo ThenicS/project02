@@ -1,0 +1,46 @@
+/* Footer */
+footer {
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer_nav {
+    margin-bottom: 20px;
+}
+
+.footer_nav_list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer_nav_item {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer_nav_item a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer_logo img {
+    width: 40px;
+}
+
+.footer_p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Pexels links */
+.footer_pexels {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer_pexels a {
+    color: white;
+    text-decoration: none;
+}

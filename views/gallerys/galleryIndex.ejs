@@ -1,13 +1,12 @@
-<%- include('../partials/header') %>
-    <link rel="stylesheet" href="/stylesheets/imageIndex.css">
+<%- include('../partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/galleryIndex.css">
     </head>
-
     <body>
+        <%- include('../partials/navigation') %>
         <main>
-            <%- include('../partials/navigation') %>
                 <div class="image_index">
-                    <ol>
-                        <img src="<%= image.ima_Original %>" alt="<%= image.alt %>">
+                    <ol class="image_container">
+                        <img class="image_gallery_show" src="<%= image.ima_Original %>" alt="<%= image.alt %>">
                     </ol>
                 </div>
                 <br>
@@ -16,7 +15,6 @@
                         <div class="collection_pick">
                             <form action="/collections/<%= collection._id %>" method="POST">
                                 <div>
-                                    <!-- <input type="hidden" id="collection_id" name="collection_id" value=""" -->
                                     <label for="collection"><%= collection.title %></label>
                                     <input hidden="text" id="image_id" name="image_id" value="<%= image._id %>">
                                     <button type="submit">Add</button>
@@ -26,12 +24,13 @@
                     <% }) %>
                 </div> <br>
                 <div class="gallery_remove">
+                    <label for="remove">Remove form Gallery</label>
                     <form action="/gallerys/<%= image._id %>?_method=DELETE" method="POST">
-                        <!-- <a href="/skills">Cancel</a> -->
-                        <input type="submit" value="Delete">
+                        <input type="submit" value="Remove">
                     </form>
                 </div>
         </main>
+        <%- include('../partials/footer') %>
     </body>
 
     </html>

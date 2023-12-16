@@ -1,33 +1,45 @@
-<%- include('../partials/header') %>
+<%- include('../partials/head') %>
+<link rel="stylesheet" href="/stylesheets/imageIndex.css">
 </head>
 <body>
+    <%- include('../partials/navigation') %>
     <main>
-        <div>
-        <%- include('../partials/navigation') %>
-        <h2><%= imageId.alt %></h2>
-        <img src="<%= imageId.src.original %>" alt="<%= imageId.alt %>">
+        <div class="photographer_title">
+            <h2>Photographer: <%= imageId.photographer %></h2>    
+        </div>
+        <div class="image_view">
+            <img src="<%= imageId.src.original %>" alt="<%= imageId.alt %>">
+        </div>
+        <div class="image_index">
+            <ul class="image_index_lists">
+                <li class="i_list"><a href="<%= imageId.photographer_url %>"><h3>Photo was taken by <%= imageId.photographer %></h3></a></li>
+                <li class="i_list"><a href="<%= imageId.url %>"><h3>Link to Original Page</h3></a></li>
+                <li class="i_list"><%= imageId.alt %></li>
+                    <div class="add_gallery">
+                        <% if (user){ %>
+                            <form action="/gallery" method="POST">
+                                <label for="gallery_pick">Add to Gallery</label>
+                                <div class="form_value_search">
+                                    <input type="hidden" id="id" name="id" value="<%= id %>">
+                                    <input type="hidden" id="photographer" name="photographer" value="<%= photographer %>">
+                                    <input type="hidden" id="pexelUrl" name="pexelUrl" value="<%= pexelUrl %>">
+                                    <input type="hidden" id="ima_Original" name="ima_Original" value="<%= ima_Original %>">
+                                    <input type="hidden" id="ima_Large2x" name="ima_Large2x" value="<%= ima_Large2x %>">
+                                    <input type="hidden" id="ima_Large" name="ima_Large" value="<%= ima_Large %>">
+                                    <input type="hidden" id="ima_Medium" name="ima_Medium" value="<%= ima_Medium %>">
+                                    <input type="hidden" id="alt" name="alt" value="<%= alt %>">
+                                </div>
+                                <button type="submit">Add</button>
+                            </form>
+                        <% }else { %>
+                            <p>Add to Gallery</p>
+                        <% } %>
+                    </div>
+                </li>
+            </ul>
         </div>
         <br>
-        <div class="add_gallery">
-            <% if (user){ %>
-                <form action="/gallery" method="POST">
-                    <label for="gallery_pick">
-                        Add to Gallery
-                    </label> <br>
-                    <input type="hidden" id="id" name="id" value="<%= id %>">
-                    <input type="hidden" id="photographer" name="photographer" value="<%= photographer %>">
-                    <input type="hidden" id="pexelUrl" name="pexelUrl" value="<%= pexelUrl %>">
-                    <input type="hidden" id="ima_Original" name="ima_Original" value="<%= ima_Original %>">
-                    <input type="hidden" id="ima_Large2x" name="ima_Large2x" value="<%= ima_Large2x %>">
-                    <input type="hidden" id="ima_Large" name="ima_Large" value="<%= ima_Large %>">
-                    <input type="hidden" id="ima_Medium" name="ima_Medium" value="<%= ima_Medium %>">
-                    <input type="hidden" id="alt" name="alt" value="<%= alt %>">
-                    <button type="submit">
-                        Add
-                    </button>
-                    <% }else { %>
-                <% } %>
-        </div>
     </main>
+    <%- include('../partials/footer') %>
 </body>
 </html>

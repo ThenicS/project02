@@ -1,22 +1,23 @@
-<%- include('../partials/header') %>
+<%- include('../partials/head') %>
     <link rel="stylesheet" href="/stylesheets/gallery.css">
 </head>
 <body>
     <%- include('../partials/navigation') %>
-    <div class="display_images">
-        <ol>
+    <main>
+        <div class="display_images">
+            <ol>
             <% images.forEach((photo)=> { %>
             <li>
-                <div>
-                    <a href="/images/<%= photo.id %>">
+                <div class="image_box">
+                    <a class="image_link" href="/images/<%= photo.id %>">
                         <img class="image_render" src="<%= photo.src.original %>" alt="<%= photo.alt %>">
                     </a>
                 </div>           
             </li> <br>
             <% }) %>
-        </ol>
-    </div>
-
+            </ol>
+        </div>
+    </main>
+    <%- include('../partials/footer') %>
 </body>
-<%- include('../partials/footer') %>
 </html>

@@ -1,43 +1,58 @@
-<%- include('../partials/header') %>
+<%- include('../partials/head') %>
     <link rel="stylesheet" href="/stylesheets/gallery.css">
+    <link rel="stylesheet" href="/stylesheets/showButton.css">
 </head>
-    <body>
-        <%- include('../partials/navigation') %>
-        <h2>Image Seargh App</h2>
-    <form action="/images/show" method="POST">
-        <div>
-            <label for="search_element">
-                Search:
-            </label>
-            <input type="text" id="search_element" name="search">
-            <input type="hidden" id="per_page" name="per_page" value="15">
-            <input type="hidden" id="page" name="page" value="1">
+<body>
+    <%- include('../partials/navigation') %>
+    <main>
+        <div class="search_engine">
+            <label for="search_image"></label>
+            <form action="/images/show" method="POST">
+                <div class="form_value_search">
+                    <label for="search_element">Search:</label>
+                    <input type="text" id="search_element" name="search">
+                    <input type="hidden" id="per_page" name="per_page" value="15">
+                    <input type="hidden" id="page" name="page" value="1">
+                </div> <br>
+                <button class="search_submit" type="submit">search</button>
+            </form>
+        </div> <br>
+        <div class="next_previous">
+            <form action="/images/show" method="POST">
+                <div class="form_value_next_previous">
+                    <label for="show_more"></label>
+                    <input type="hidden" id="per_page" name="per_page" value="<%= per_page %>">
+                    <input type="hidden" id="search" name="search" value="<%= search %>">
+                    <input type="hidden" id="page" name="page" value="<%= parseInt(page) + 1 %>">
+                    <button type="submit">Next Page</button>
+                </div>
+            </form>
         </div>
-        <button type="submit">
-            search
-        </button>
         <div class="display_images">
             <ol>
                 <% images.forEach((photo)=> { %>
-                    <li>
-                        <div>
-                            <a href="<%= photo.id %>">
-                                <img class="image_render" src="<%= photo.src.original %>" alt="<%= photo.alt %>">
-                            </a>
-                        </div>                        
-                    </li> <br>
+                <li>
+                    <div>
+                        <a href="<%= photo.id %>">
+                            <img class="image_render" src="<%= photo.src.original %>" alt="<%= photo.alt %>">
+                        </a>
+                    </div>                        
+                </li> <br>
                 <% }) %>
             </ol>
-            </div>
-        </form>
-        <form action="/images/show" method="POST">
-            <div>
-                <label for="show_more"></label>
-                <input type="hidden" id="per_page" name="per_page" value="<%= per_page %>">
-                <input type="hidden" id="search" name="search" value="<%= search %>">
-                <input type="hidden" id="page" name="page" value="<%= parseInt(page) + 1 %>">
-                <button type="submit">Next Page</button>
-            </div>
-        </form>
+        </div> <br>
+        <div class="next_previous">
+            <form action="/images/show" method="POST">
+                <div>
+                    <label for="show_more"></label>
+                    <input type="hidden" id="per_page" name="per_page" value="<%= per_page %>">
+                    <input type="hidden" id="search" name="search" value="<%= search %>">
+                    <input type="hidden" id="page" name="page" value="<%= parseInt(page) + 1 %>">
+                    <button type="submit">Next Page</button>
+                </div>
+            </form>
+        </div> <br>
+        </main>
+    <%- include('../partials/footer') %>
     </body>
     </html>

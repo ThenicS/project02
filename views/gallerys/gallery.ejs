@@ -1,21 +1,21 @@
-<%- include('../partials/header') %>
+<%- include('../partials/head') %>
     <link rel="stylesheet" href="/stylesheets/gallery.css">
 </head>
 <body>
     <%- include('../partials/navigation') %>
-    <div class="display_images">
-        <ol>
-            <% gallerys.forEach((gallery)=> { %>
-                <li>
-                    <a href="/gallery/<%= gallery._id.toString() %>">
-                        <img class="image_render" src="<%= gallery.ima_Original %>" alt="<%= gallery.alt %>">
-                    </a>
-                </li>
-            <%}) %>
-        </ol>
-    </div>
-    <div>
-        <form action=""></form>
-    </div>
+    <main>
+        <div class="display_images">
+            <ol>
+                <% gallerys.forEach((gallery)=> { %>
+                    <li>
+                        <a href="/gallery/<%= gallery._id.toString() %>">
+                            <img class="image_render" src="<%= gallery.ima_Original %>" alt="<%= gallery.alt %>">
+                        </a>
+                    </li>
+                <%}) %>
+            </ol>
+        </div>
+    </main>
+    <%- include('../partials/footer') %>
 </body>
 </html>

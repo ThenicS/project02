@@ -1,21 +1,21 @@
-<%- include('../partials/header') %>
+<%- include('../partials/head') %>
+    <!-- <link rel="stylesheet" href="/stylesheets/collections.css"> -->
 </head>
 <body>
+    <%- include('../partials/navigation') %>
     <main>
-        <%- include('../partials/navigation') %>
         <h2>Collections</h2>
-        <!-- <a href="/collections/new">Create</a> -->
         <div class="collections">
             <% collections.forEach((collection) => { %>
                 <ul>
                     <li>
                         <div class="collection_choose">
-                            <a style="background-color:#a9eea9" href="/collections/<%= collection._id.toString() %>"><%= collection.title %></a>
+                            <a href="/collections/<%= collection._id.toString() %>"><%= collection.title %></a>
                         </div>
                         <div class="collection_edit">
                             <form action="/collections/?_method=PUT" method="POST">
                                 <label for="title">Title</label>
-                                <input type="text" id="title" name="title">
+                                <input type="text" id="title" name="title" required>
                                 <input type="hidden" id="collection_id" name="collection_id" value="<%= collection.id.toString() %>">
                                 <button class="edit_title_btn">Change</button>
                             </form>
@@ -29,13 +29,14 @@
             <h3>New Collection</h3>
             <form action="/collections" method="POST">
                 <label for="title">Title</label>
-                <input type="text" id="title" name="title"><br>
+                <input type="text" id="title" name="title" required><br>
                 <label for="description">Description</label><br>
                 <textarea name="description" id="description" cols="20" rows="10"></textarea><br>
                 <button class="create_btn" type="submit">Create</button>
             </form>
         </div>
     </main>
-    
+    <%- include('../partials/footer') %>
 </body>
+<!-- <script src="scripts/collections.js"></script> -->
 </html>

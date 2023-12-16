@@ -1,19 +1,83 @@
-.image_index {
-    text-align: center;
-    background-color: #ffffff;
-    border-radius: 10px;
+/* Main Styles */
+main {
+    background-color: #f4f4f4;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-ol {
+h2 {
+    color: #333;
+}
+
+/* Image View */
+.image_view {
+    margin-top: 20px;
+}
+
+.image_view img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Image Index Styles */
+.image_index {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.image_index_lists {
     list-style: none;
     padding: 0;
 }
 
-img {
-    max-width: 30%;
-    height: auto;
-    border-radius: 8px;
-    margin: 0 auto;
+.i_list {
+    margin-bottom: 20px;
+}
+
+.i_list h3 {
+    margin: 0;
+    color: #333;
+}
+
+.i_list a {
+    text-decoration: none;
+    color: #6495ed;
+}
+
+.i_list a:hover {
+    text-decoration: underline;
+}
+
+/* Add to Gallery Form Styles */
+.add_gallery {
+    margin-top: 20px;
+}
+
+.add_gallery label {
+    font-weight: bold;
+    color: #333;
+}
+
+.add_gallery p {
+    color: #777;
+}
+
+.form_value_search {
+    margin-top: 10px;
+}
+
+.add_gallery button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #87ceeb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.add_gallery button:hover {
+    background-color: #4682b4;
 }

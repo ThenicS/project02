@@ -1,0 +1,156 @@
+main {
+    max-width: 1000px; /* Set your desired max-width */
+    margin: 0 auto; /* Center the main container */
+    padding: 20px;
+    min-height: 500px;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #93c6e7;
+    color: #b9f3fc;
+    padding: 10px 0;
+}
+
+.main_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_logo img {
+    width: 80px;
+}
+
+.nav_left,
+.nav_right {
+    display: flex;
+    align-items: center;
+}
+
+.nav_left a,
+.nav_right a {
+    color: #fedeff;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav_left a:hover,
+.nav_right a:hover {
+    color: gray;
+}
+
+/* Active state styling */
+.active {
+    position: relative;
+}
+
+.active:before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+/* Logout Login */
+.logout,
+.login {
+    background-color: white;
+    color: black;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    background-color: #93c6e7;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.company_inc {
+    margin-bottom: 20px;
+}
+
+.footer_nav {
+    margin-bottom: 20px;
+}
+
+.footer_nav_list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.footer_nav_item {
+    margin-right: 20px;
+}
+
+.footer_nav_item a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer_nav_item a:hover {
+    color: gray;
+}
+
+.footer_logo img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.footer_p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Pexels links in the footer */
+.footer_pexels_div {
+    margin-bottom: 20px;
+}
+
+.footer_pexels_list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.footer_pexels {
+    margin-right: 20px;
+}
+
+.footer_pexels a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer_pexels a:hover {
+    color: gray;
+}
+
+/* Header  */
+/* header {
+    background-color: #87ceeb;
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    margin: 0;
+    color: white;
+    font-size: 2em;
+} */

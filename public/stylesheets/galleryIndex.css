@@ -1,0 +1,79 @@
+/* Image_Index  */
+.image_index {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image_container {
+    list-style: none;
+    padding: 0;
+}
+
+.image_gallery_show {
+    width: 100%; /* Make the image fill the container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Collections List Styles */
+.collections_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.collection_pick {
+    flex: 1 0 calc(33.333% - 10px); /* Adjust the width of each collection item */
+}
+
+.collection_pick form {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+button {
+    background-color: #6fa7d9;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4a82b8;
+}
+
+/* Gallery Remove Styles */
+.gallery_remove {
+    text-align: center;
+    margin-top: 20px;
+}
+
+label[for='remove'] {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type='submit'] {
+    background-color: #ff6347;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type='submit']:hover {
+    background-color: #d32f2f;
+}
