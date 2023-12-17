@@ -71,7 +71,7 @@ nav {
 /* Footer */
 footer {
     background-color: #93c6e7;
-    color: white;
+    color: #fedeff;
     padding: 20px 0;
     text-align: center;
     display: flex;
@@ -98,7 +98,7 @@ footer {
 }
 
 .footer_nav_item a {
-    color: white;
+    color: #fedeff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -133,7 +133,7 @@ footer {
 }
 
 .footer_pexels a {
-    color: white;
+    color: #fedeff;
     text-decoration: none;
     transition: color 0.3s ease;
 }

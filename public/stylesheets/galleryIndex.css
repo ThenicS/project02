@@ -12,10 +12,10 @@
 .image_gallery_show {
     width: 100%; /* Make the image fill the container */
     border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* shadow */
 }
 
-/* Collections List Styles */
+/* Collections List */
 .collections_list {
     display: flex;
     flex-wrap: wrap;
@@ -52,7 +52,7 @@ button:hover {
     background-color: #4a82b8;
 }
 
-/* Gallery Remove Styles */
+/* Gallery Remove button */
 .gallery_remove {
     text-align: center;
     margin-top: 20px;
