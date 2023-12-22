@@ -14,13 +14,4 @@ router.get('/gallery/:id', gallerysCtrl.indexGallerys);
 
 router.delete('/gallerys/:id', gallerysCtrl.galleryRemove);
 
-// router.post('/collections/:id', collectionCtrl.collectionUpdate);
-
-// router.get(
-//     '/auth/google',
-//     passport.authenticate('google', {
-//         scope: ['profile', 'email'],
-//     })
-// );
-
 module.exports = router;

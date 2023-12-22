@@ -1,11 +1,11 @@
 main {
-    max-width: 1000px; /* Set your desired max-width */
-    margin: 0 auto; /* Center the main container */
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 20px;
     min-height: 500px;
 }
 
-/* Navigation Styles */
+/* Navigation */
 nav {
     background-color: #93c6e7;
     color: #b9f3fc;
@@ -43,7 +43,7 @@ nav {
     color: gray;
 }
 
-/* Active state styling */
+/* Active state */
 .active {
     position: relative;
 }
@@ -141,16 +141,3 @@ footer {
 .footer_pexels a:hover {
     color: gray;
 }
-
-/* Header  */
-/* header {
-    background-color: #87ceeb;
-    padding: 20px;
-    text-align: center;
-}
-
-h2 {
-    margin: 0;
-    color: white;
-    font-size: 2em;
-} */

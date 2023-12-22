@@ -22,7 +22,6 @@ async function collectionsSet(req, res) {
         pageTitle: 'Collections',
         path: '/collections',
     });
-    // res.send(collections);
 }
 
 async function collectionShow(req, res) {
@@ -61,9 +60,6 @@ async function collectionNew(req, res) {
 async function collectionUpdate(req, res) {
     const collection_id = req.params.id;
     const image_id = req.body.image_id;
-    // console.log('collection_id:', collection_id);
-    // console.log('image_id:', image_id);
-    // console.log('collection_id:', collection_id);
     // >>>>>>>> <<<<<<<<
     const collection = await Collection.findOne({ _id: collection_id });
     const image = await Gallery.findOne({ _id: image_id });

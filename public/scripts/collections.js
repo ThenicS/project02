@@ -1,24 +1,15 @@
-// Not Working
-
+// DOMContentLoaded;
+// https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
 document.addEventListener('DOMContentLoaded', function () {
-    const collectionEditDivs = document.querySelectorAll('.collection_edit');
-    console.log(collectionEditDivs);
-    collectionEditDivs.forEach(function (div) {
-        div.style.display = 'none';
+    const showEditButtons = document.querySelectorAll('.show-edit');
+    console.log(showEditButtons);
+    showEditButtons.forEach((button) => {
+        button.addEventListener('click', function () {
+            const collectionEdit =
+                this.closest('.collection-pick').querySelector(
+                    '.collection_edit'
+                );
+            collectionEdit.classList.toggle('hidden');
+        });
     });
 });
-
-function toggleCollectionEdit(collectionId) {
-    const collectionEditDiv = document.getElementById(
-        'collection_edit_' + collectionId
-    );
-    console.log(collectionEditDiv);
-    if (
-        collectionEditDiv.style.display === 'none' ||
-        collectionEditDiv.style.display === ''
-    ) {
-        collectionEditDiv.style.display = 'block';
-    } else {
-        collectionEditDiv.style.display = 'none';
-    }
-}

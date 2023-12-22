@@ -1,26 +1,35 @@
 <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/collectionShow.css">
 </head>
 <body>
     <%- include('../partials/navigation') %>
     <main>
         <div class="display_collections">
             <br>
-            <ul>
+            <ol class="images_list">
                 <% imageSet.forEach((image) => { %>
                     <li>
-                        <a href="/images/<%= image.id %>">
-                            <img src="<%= image.ima_Medium %>" alt="<%= image.alt %>">
-                        </a>
+                        <div class="image_index">
+                            <a href="/images/<%= image.id %>">
+                                <img src="<%= image.ima_Medium %>" alt="<%= image.alt %>">
+                            </a>    
+                        </div>
+                        <div class="image_table">
+                            <h2 class="photographer_name" class="i_li">Photo was taken by <%= image.photographer %></h2>
+                        </div>
                     </li>
                 <% }) %>
-            </ul>
-        </div>
-        <div class="gallery_remove">
+            </ol>
+        </div> <br>
+        <button class="hide_remove">Remove</button>
+        <div class="gallery_remove hidden">
             <form action="/collections/<%= collection._id %>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete">
+                <label for="ask_remove" class="label">Are you sure?</label> <br>
+                <input type="submit" value="Delete" class="submit_btn">
             </form>
         </div>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/scripts/collectionRemove.js"></script>
 </body>
 </html>

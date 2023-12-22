@@ -1,17 +1,18 @@
 <%- include('../partials/head') %>
-    <!-- <link rel="stylesheet" href="/stylesheets/collections.css"> -->
+    <link rel="stylesheet" href="/stylesheets/collections.css">
 </head>
 <body>
     <%- include('../partials/navigation') %>
     <main>
         <h2>Collections</h2>
         <div class="collections">
-            <% collections.forEach((collection) => { %>
-                <ul>
-                    <li>
+            <ul>
+                <% collections.forEach((collection) => { %>
+                    <li class="collection-pick">
                         <div class="collection_choose">
-                            <a href="/collections/<%= collection._id.toString() %>"><%= collection.title %></a>
+                            <a href="/collections/<%= collection._id.toString() %>"><span class="collection_head"><%= collection.title %></span></a>
                         </div>
+                        <button class="show-edit">Change Title</button>
                         <div class="collection_edit">
                             <form action="/collections/?_method=PUT" method="POST">
                                 <label for="title">Title</label>
@@ -21,8 +22,8 @@
                             </form>
                         </div>
                     </li>
-                </ul>
-            <% }) %>
+                <% }) %>    
+            </ul>
         </div>
         <br>
         <div class="create_collection">
@@ -37,5 +38,6 @@
         </div>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/scripts/collections.js"></script>
 </body>
 </html>

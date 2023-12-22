@@ -10,9 +10,9 @@
 }
 
 .image_gallery_show {
-    width: 100%; /* Make the image fill the container */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* shadow */
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 /* Collections List */
@@ -23,7 +23,7 @@
 }
 
 .collection_pick {
-    flex: 1 0 calc(33.333% - 10px); /* Adjust the width of each collection item */
+    flex: 1 0 calc(33.333% - 10px);
 }
 
 .collection_pick form {

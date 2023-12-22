@@ -8,7 +8,6 @@ const apiKey = `${process.env.API_KEY}`;
 
 module.exports = {
     showGallerys,
-    // addImgae,
     saveGallerys,
     indexGallerys,
     galleryRemove,
@@ -57,12 +56,6 @@ async function saveGallerys(req, res) {
         user: res.locals.user,
     });
     // console.log(res.locals.user);
-    // gallerys.user = res.locals.user;
-    // await gallerys.save();
-    // gallerys.user.push(res.locals.user);
-    // await gallerys.save();
-    // const objId = gallerys.ObjectId.toString();
-    // console.log(objId);
     res.redirect('/gallery');
 }
 

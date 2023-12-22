@@ -40,8 +40,8 @@ async function home(req, res) {
 }
 
 function search(req, res) {
+    // Add Trending and New to image search page in future
     try {
-        // Add Trending and New to image search page
         res.render('images/search', {
             pageTitle: 'Photos',
             path: '/search',
