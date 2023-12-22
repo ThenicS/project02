@@ -1,66 +1,31 @@
-## App Title
+## Gallery/Photo App
 
-Learning about Pexels License API
-Introduction
-Brief overview of Pexels and its mission to provide high-quality, free stock photos.
-Introduction to the Pexels License API and its purpose.
-Getting Started
+## Project Description
 
-1. Sign Up for an API Key
-   Instructions on how to sign up for a Pexels account.
-   How to generate an API key through the Pexels Developer Dashboard.
-2. API Documentation
-   Overview of the official Pexels License API documentation.
-   Explanation of endpoints, parameters, and response formats.
-   Using the Pexels License API
-3. Making API Requests
-   Explanation of how to construct a basic API request.
-   Sample code snippets in a popular programming language (e.g., Python, JavaScript) for making requests.
-4. Handling Responses
-   Overview of the structure of API responses.
-   How to parse and extract relevant information from the API response.
-5. Integrating Pexels License API into a Project
-   Step-by-step guide on integrating the API into a simple project.
-   Examples of potential use cases, such as displaying random images or searching for specific content.
-   Understanding Licensing
-6. Licensing Information
-   Explanation of the licensing terms associated with Pexels images.
-   Guidance on how to attribute and use images in accordance with the Pexels license.
-   Best Practices and Tips
-7. Best Practices
-   Tips on optimizing API usage for better performance.
-   Considerations for error handling and rate limiting.
-8. Learning Resources
-   Additional resources for further learning, such as tutorials and community forums.
-   Conclusion
-   Recap of key points learned about using the Pexels License API.
-   Encouragement to explore and experiment with the API for educational purpose# Express MongoDB CRUD Project
+This project is a learning exercise that utilizes the Pexels API for fetching images and integrates it with a Node.js, Express, MongoDB, and Mongoose backend. The goal is to create a simple application that allows users to explore and manage collections of images sourced from Pexels.
 
 ## Screenshots
 
-Include screenshots of your app's landing page or any other relevant parts of the application.
+screenshots app
 
-![Screenshot 1](url/to/screenshot1.png)
-![Screenshot 2](url/to/screenshot2.png)
+![Screenshot 1](./myfile/shots/screenshot1.png)
+![Screenshot 2](./myfile/shots/screenshot2.png)
+![Screenshot 3](./myfile/shots/screenshot3.png)
+![Screenshot 4](./myfile/shots/screenshot4.png)
+![Screenshot 5](./myfile/shots/screenshot5.png)
+![Screenshot 6](./myfile/shots/screenshot6.png)
+![Screenshot 7](./myfile/shots/screenshot7.png)
 
 ## Technologies Used
 
 List of technologies used in Project.
 
+-   [Pexels API](https://www.pexels.com/api/documentation/)
 -   Node.js
 -   Express.js
 -   MongoDB and Mongoose
 -   EJS
--   Pexels API
 -   HTML/CSS
 -   Javascript
 -   OAuth
 -   Passport
-
-## Getting Started
-
-1. Clone the repository:
-
-    ```bash
-    git clone https://github.com/your-username/your-repo.git
-    ```
