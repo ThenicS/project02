@@ -1,4 +1,4 @@
-# project 2
+## App Title
 
 Learning about Pexels License API
 Introduction
@@ -34,4 +34,33 @@ Getting Started
    Additional resources for further learning, such as tutorials and community forums.
    Conclusion
    Recap of key points learned about using the Pexels License API.
-   Encouragement to explore and experiment with the API for educational purposes.
+   Encouragement to explore and experiment with the API for educational purpose# Express MongoDB CRUD Project
+
+## Screenshots
+
+Include screenshots of your app's landing page or any other relevant parts of the application.
+
+![Screenshot 1](url/to/screenshot1.png)
+![Screenshot 2](url/to/screenshot2.png)
+
+## Technologies Used
+
+List of technologies used in Project.
+
+-   Node.js
+-   Express.js
+-   MongoDB and Mongoose
+-   EJS
+-   Pexels API
+-   HTML/CSS
+-   Javascript
+-   OAuth
+-   Passport
+
+## Getting Started
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/your-username/your-repo.git
+    ```
